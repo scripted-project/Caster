@@ -1,0 +1,12 @@
+{
+    "profiles": {
+        "Base": {
+            "defaults": {
+                "audio": null,
+                "output": null,
+                "video": null
+            }
+        }
+    }
+    
+}

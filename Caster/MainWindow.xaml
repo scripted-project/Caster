@@ -1,0 +1,84 @@
+﻿<Window x:Class="Caster.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+
+    <Grid>
+        <Menu>
+            <MenuItem Header="Settings"></MenuItem>
+        </Menu>
+        <Grid>
+            <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" MinHeight="400"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+            <GroupBox Header="Caster" Margin="20" VerticalAlignment="Top">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <GroupBox Header="Sources" Grid.Row="0">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                            </Grid.RowDefinitions>
+
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto" MinWidth="200"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+
+                            <Label Content="Audio" Grid.Row="0" Grid.Column="0"/>
+                            <ComboBox Name="audioSelection" Grid.Row="0" Grid.Column="1"></ComboBox>
+
+                            <Label Content="Video" Grid.Row="1" Grid.Column="0"/>
+                            <ComboBox Name="videoSelection" Grid.Row="1" Grid.Column="1"></ComboBox>
+                        </Grid>
+                    </GroupBox>
+                    <GroupBox Header="Output" Grid.Row="1">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto" MinWidth="200"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                            </Grid.RowDefinitions>
+
+                            <Label Content="Output Type" Grid.Row="0" Grid.Column="0"/>
+                            <ComboBox Name="outputTypeSelection" Grid.Row="0" Grid.Column="1">
+                                <ComboBoxItem Content="MP3"/>
+                                <ComboBoxItem Content="MP4"/>
+                            </ComboBox>
+
+                            <Label Content="Output Destination" Grid.Row="1" Grid.Column="0"/>
+                            <TextBox Grid.Row="1" Grid.Column="1"/>
+                        </Grid>
+                    </GroupBox>
+                    <GroupBox Header="Preview" Grid.Row="2">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="*"/>
+                            </Grid.RowDefinitions>
+
+                        </Grid>
+                    </GroupBox>
+                </Grid>
+            </GroupBox>
+            <Label Content="Version:" Name="versionLabel" Grid.Row="1"/>
+        </Grid>
+        
+    </Grid>
+</Window>
