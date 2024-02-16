@@ -1,10 +1,10 @@
-﻿<Window x:Class="Caster.MainWindow"
+﻿<Window x:Class="CasterAPP.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="600" Width="800">
 
     <Grid>
         <Menu>
@@ -21,6 +21,7 @@
                         <RowDefinition Height="Auto"/>
                         <RowDefinition Height="Auto"/>
                         <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
                     </Grid.RowDefinitions>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="*"/>
@@ -32,7 +33,6 @@
                                 <RowDefinition Height="Auto"/>
                                 <RowDefinition Height="Auto"/>
                             </Grid.RowDefinitions>
-
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="Auto" MinWidth="200"/>
                                 <ColumnDefinition Width="*"/>
@@ -60,19 +60,36 @@
                             <ComboBox Name="outputTypeSelection" Grid.Row="0" Grid.Column="1">
                                 <ComboBoxItem Content="MP3"/>
                                 <ComboBoxItem Content="MP4"/>
+                                <ComboBoxItem Content="Live"/>
                             </ComboBox>
 
                             <Label Content="Output Destination" Grid.Row="1" Grid.Column="0"/>
-                            <TextBox Grid.Row="1" Grid.Column="1"/>
+                            <TextBox Name="outputDestination" Grid.Row="1" Grid.Column="1"/>
                         </Grid>
                     </GroupBox>
                     <GroupBox Header="Preview" Grid.Row="2">
                         <Grid>
                             <Grid.RowDefinitions>
-                                <RowDefinition Height="*"/>
-                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
                             </Grid.RowDefinitions>
-
+                            <Image Name="cameraPreview" Height="200" Grid.Row="0"/>
+                            <Canvas ToolTip="Audio Visualizer" Background="GhostWhite" Height="75" Grid.Row="1"/>
+                        </Grid>
+                    </GroupBox>
+                    <GroupBox Header="Controls" Grid.Row="3">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="20"/>
+                            </Grid.RowDefinitions>
+                            <Button Name="recordButton" Content="Record" Grid.Column="0"/>
+                            <Button Name="pauseStartButton" Content="Pause/Start" Grid.Column="1"/>
+                            <Button Name="endButton" Content="End" Grid.Column="2"/>
                         </Grid>
                     </GroupBox>
                 </Grid>

@@ -10,9 +10,9 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using NAudio.Wave;
-using Caster.Components;
+using CasterAPP.Components;
 
-namespace Caster;
+namespace CasterAPP;
 
 /// <summary>
 /// Interaction logic for MainWindow.xaml
@@ -22,21 +22,34 @@ public partial class MainWindow : Window
     public MainWindow()
     {
         InitializeComponent();
-        InitializeAudioSources();
 
-        string jsonString = File.ReadAllText("./data/data.json");
-        DataJSON jsonData = JsonSerializer.Deserialize<DataJSON>(jsonString)!;
+        videoSelection.SelectedIndex = 0;
+        audioSelection.SelectedIndex = 0;
+        outputDestination.Text = "./Recordings/output.wav";
 
-        if (jsonData.Version != null) { versionLabel.Content = jsonData.Version; }
-        if (jsonData.Profiles != null && jsonData.Profiles["base"] != null)
+        try
         {
-            Profile baseProf = jsonData.Profiles["base"];
-            if (baseProf.Defaults != null)
+            string jsonString = File.ReadAllText("./Data/data.json");
+        
+            if (jsonString != null)
             {
-                Defaults defaults = baseProf.Defaults;
-                if (defaults.Audio != null) { audioSelection.SelectedItem = defaults.Audio; }
-                if (defaults.Video != null) { videoSelection.SelectedItem = defaults.Video; }
+                DataJSON jsonData = JsonSerializer.Deserialize<DataJSON>(jsonString)!;
+                if (jsonData.Version != null) { versionLabel.Content = jsonData.Version; }
+                if (jsonData.Profiles != null && jsonData.Profiles["base"] != null)
+                {
+                    Profile baseProf = jsonData.Profiles["base"];
+                    if (baseProf.Defaults != null)
+                    {
+                        Defaults defaults = baseProf.Defaults;
+                        if (defaults.Audio != null) { audioSelection.SelectedItem = defaults.Audio; }
+                        if (defaults.Video != null) { videoSelection.SelectedItem = defaults.Video; }
+                    }
+                }
             }
-        }
+        } catch {}
+        
+        
+        InitializeAudio();
+        InitializeControllers();
     }
 }

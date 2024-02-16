@@ -5,13 +5,13 @@ VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CasterAPP", "Caster\CasterAPP.csproj", "{6D64BFED-4F78-40B8-9E71-839B9ADAF4A0}"
 EndProject
-Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Installer", "Setup1\Setup1.vdproj", "{8B4DB5FF-7934-4FCB-95B9-7BA369D94F7E}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Data", "Data", "{7223982A-2CDE-467A-8C9A-771F42624AEF}"
 	ProjectSection(SolutionItems) = preProject
-		icon.png = icon.png
 		data.json = data.json
+		icon.png = icon.png
 	EndProjectSection
+EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Caster Installer", "Caster Installer\Caster Installer.vdproj", "{835513C2-792F-445F-A36E-73E5FFB7E9E8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,8 +23,8 @@ Global
 		{6D64BFED-4F78-40B8-9E71-839B9ADAF4A0}.Debug|Any CPU.Build.0 = Release|Any CPU
 		{6D64BFED-4F78-40B8-9E71-839B9ADAF4A0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6D64BFED-4F78-40B8-9E71-839B9ADAF4A0}.Release|Any CPU.Build.0 = Release|Any CPU
-		{8B4DB5FF-7934-4FCB-95B9-7BA369D94F7E}.Debug|Any CPU.ActiveCfg = Release
-		{8B4DB5FF-7934-4FCB-95B9-7BA369D94F7E}.Release|Any CPU.ActiveCfg = Release
+		{835513C2-792F-445F-A36E-73E5FFB7E9E8}.Debug|Any CPU.ActiveCfg = Debug
+		{835513C2-792F-445F-A36E-73E5FFB7E9E8}.Release|Any CPU.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

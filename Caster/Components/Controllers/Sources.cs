@@ -4,9 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CasterAPP.Components.Audio
+namespace CasterAPP
 {
-    internal class Visualizer
+    public partial class MainWindow
     {
+        internal void OnOutDESTChanged(object sender, EventArgs e) { }
     }
 }
